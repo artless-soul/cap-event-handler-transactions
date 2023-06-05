@@ -21,9 +21,9 @@
      - line 35 // req.reject('Some ON update error happened');
 
 -   tests/test.http -->
-   - a.Clear log
-   - b. Update book
-   - c. Check log
+    - a.Clear log
+    - b. Update book
+    - c. Check log
 
    ==> No changes are committed
 

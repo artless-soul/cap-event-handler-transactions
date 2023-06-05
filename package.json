@@ -1,0 +1,51 @@
+{
+  "name": "cap-event-handler-transactions",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": "^18.12.0",
+    "yarn": "^1.22.19"
+  },
+  "dependencies": {
+    "@sap/cds": "^6",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "6.7.2",
+    "@sap/eslint-plugin-cds": "^2.6.3",
+    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+    "@sap/ux-specification": "^1.108.3",
+    "@sapui5/ts-types": "^1.92.2",
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.16.3",
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
+    "sqlite3": "^5.1.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "deploy": "yarn run cds deploy --to sqlite",
+    "deploy-hana": "yarn run cds deploy --to hana  --auto-undeploy --vcap-file default-env.json",
+    "start": "yarn run cds-ts run",
+    "watch": "yarn run cds-ts watch",
+    "debug": "DEBUG=hana NODE_OPTIONS=--inspect cds-ts run"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "db.sqlite"
+        }
+      }
+    }
+  }
+}

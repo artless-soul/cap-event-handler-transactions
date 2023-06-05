@@ -1,0 +1,15 @@
+
+### clear logs
+POST http://localhost:4004/sap/avp/SystemService/deleteAllLogs
+Content-Type: application/json
+
+{}
+
+### Update book
+PUT http://localhost:4004/sap/avp/AdminService/Books(ID='2')
+Content-Type: application/json
+
+{"iban":"123-456"}
+
+### Check log
+GET http://localhost:4004/sap/avp/SystemService/Logs

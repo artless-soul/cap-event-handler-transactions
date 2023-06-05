@@ -7,5 +7,5 @@
 3. yarn run start
 
 4. test.http -->
-   Update book
-   Check log
+   a. Update book, 
+   b. Check log

@@ -6,6 +6,22 @@
 
 3. yarn run start
 
-4. test.http -->
+4. Transaction behaviour in before handler error
+
+   test.http -->
    Update book
    Check log
+
+   ==> Some changes from logBeforeBooksUpdate are committed
+
+5. Transaction behaviour in on handler error
+   a. comment the code in srv/lib/common-service.ts, checksBeforeUpdate that rejects request
+   line 14 req.reject('Some before update error happened');
+   b. Uncomment the code in srv/lib/common-service.ts, checksBeforeUpdate that rejects request
+   line 35 // req.reject('Some ON update error happened');
+   test.http -->
+   Clear log
+   Update book
+   Check log
+
+   ==> No changes are committed

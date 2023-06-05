@@ -13,6 +13,10 @@ export default (srv: Service) => {
     await CommonService.logBeforeBooksUpdate(req);
   });
 
+  srv.on('UPDATE', Books, async (req: Request) => {
+    await CommonService.onBooksUpdate(req);
+  });
+
   srv.on('error', (err, _req) => {
     (err as any).message = 'Oh no! ' + (err as any).message;
   });
